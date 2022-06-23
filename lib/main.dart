@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeUi.homeRoute: (context) => const HomeUi(),
         PlaceDetail.route: (context) => PlaceDetail(),
-
       },
     );
   }

@@ -15,7 +15,7 @@ class HomeUi extends StatelessWidget {
           IconButton(
               onPressed: () => {},
               icon: const Icon(
-                Icons.list,
+                Icons.email,
                 color: Colors.black,
               ))
         ],
@@ -44,7 +44,7 @@ class HomeUi extends StatelessWidget {
                 ),),
                 Text('view all' , style: GoogleFonts.aBeeZee(
                     fontSize: 20,
-                    color: Colors.orange
+                    color: Colors.blue
                 ),),
               ],
             ),

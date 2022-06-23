@@ -70,6 +70,11 @@ flutter:
     - assets/images/travel7.jpeg
     - assets/images/travel8.jpeg
     - assets/images/travel9.jpeg
+    - assets/images/travels1.jpeg
+    - assets/images/travels2.jpeg
+    - assets/images/travels3.jpeg
+    - assets/images/travels4.jpg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/modules/travel.dart';
 import 'package:travel_app/widgets/placeDetail.dart';
 
 class BottomBlog extends StatelessWidget {
   final _bottomGroub = Travel.getBottomBlogs();
+ BottomBlog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BottomBlog extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 5),
         child: GestureDetector(
           onTap: (){
-              Navigator.of(context).pushNamed(PlaceDetail.route);
+              Navigator.of(context).pushNamed(PlaceDetail.route,arguments: _bottomGroub[index]);
           },
           child: Stack(
             children: [
@@ -32,10 +32,10 @@ class BottomBlog extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white70,
                           borderRadius: BorderRadius.all(Radius.circular(8))),
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Text(
                         _bottomGroub[index].location,
                         style: const TextStyle(fontSize: 13),

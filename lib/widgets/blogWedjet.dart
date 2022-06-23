@@ -24,8 +24,9 @@ class _BlogWedgetState extends State<BlogWedget> {
         itemCount: groub.length,
         itemBuilder: (ctx, index) {
           return GestureDetector(
-            onTap: (){
-              Navigator.of(context).pushNamed(PlaceDetail.route);
+            onTap: () {
+              Navigator.of(context)
+                  .pushNamed(PlaceDetail.route, arguments: groub[index]);
             },
             child: Stack(children: [
               Padding(
@@ -43,47 +44,48 @@ class _BlogWedgetState extends State<BlogWedget> {
               Positioned(
                   bottom: 80,
                   left: 20,
-                  child: Container(
-
-                    child: Column(
-                      children: [
-                        Material(
-                          color: Colors.transparent,
-                          child: Text(
-                            groub[index].name,
-                            style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),
-                          ),
+                  child: Column(
+                    children: [
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          groub[index].name,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
-                        Material(
-                          color: Colors.transparent,
-                          child: Text(
-                            groub[index].location,
-                            style: TextStyle(color: Colors.white, fontSize: 18),
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          groub[index].location,
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      )
+                    ],
                   )),
-               Positioned(
+              Positioned(
                   bottom: 70,
                   right: 35,
-                  child: groub[index]!=groub.last? Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.white70),
-                      alignment: Alignment.center,
-                      child: IconButton(
-                        alignment: Alignment.center,
-                        icon: const Icon(
-                          Icons.arrow_forward,
-                          size: 35,
-                        ),
-                        onPressed: () {},
-                      )
-                  ):Text('')
-               )
+                  child: groub[index] != groub.last
+                      ? Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white70),
+                          alignment: Alignment.center,
+                          child: IconButton(
+                            alignment: Alignment.center,
+                            icon: const Icon(
+                              Icons.arrow_forward,
+                              size: 35,
+                            ),
+                            onPressed: () {},
+                          ))
+                      : Text(''))
             ]),
           );
         });
